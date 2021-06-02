@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bokus</title>
+    <link rel="stylesheet" href="Bokus.Css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <img src="./bokus.12.png" class="logo" id="logo" alt="logo" />
+        <div class="nav-search" id="find">
+          <a href="#"></a>
+          <label for="search"></label>
+          <input type="text" id="search" placeholder="Hitta din bok" />
+          <a class="check" href="Bokus.html">Home</a>
+          <a href="#" id="none">Update</a>
+        </div>
+        <div class="icons">
+          <a href="#" id="cart"><i class="fa fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <main>   
+      <div class="categories">
+        <div class="title-container">
+          <h1 id="title">Böcker</h1>
+        </div>
+        <div class="card">
+          <div class="item-container" id="0">
+            <div class="card-items">
+              <img
+                src="./den-nya-varldsfotbollen.jpg"
+                alt="img"
+                class="card-img"/>
+              <p class="item-name">
+                Den nya världsfotbollen - Författare: Erik Niva
+              </p>
+            </div>
+            <span onclick="addBook1ToCart()" class="item-price">59.00 kr</span>
+           <button id="add-to-cart0" class="fa fa-shopping-cart" onclick="addBook1ToCart()"</button>
+             </div>
+
+          <div class="item-container" id="1">
+            <div class="card-item">
+              <img src="./blagult.jpg" alt="img" class="card-img" />
+              <p class="item-name">Blågult - Författare: Jesper Högström</p>
+            </div>
+            <span onclick="addBook2ToCart()" class="item-price">216.00 kr</span>
+           <button id="add-to-cart1" class="fa fa-shopping-cart" onclick="addBook2ToCart()"</button>
+             </div>
+
+          <div class="item-container" id="2">
+            <div class="card-item">
+              <img src="./recept.jpg" alt="img" class="card-img" />
+              <p class="item-name">
+                Hälsa på recept - Författare: Anders Hansen
+              </p>
+            </div>
+            <span onclick="addBook3ToCart()" class="item-price">179.00 kr</span>
+           <button id="add-to-cart2" class="fa fa-shopping-cart" onclick="addBook3ToCart()"</button>
+             </div>
+
+          <div class="item-container" id="3">
+            <div class="card-item">
+              <img src="./det.goda.livet.jpg" alt="img" class="card-img" />
+              <p class="item-name">Det goda livet - Författare: Tareq Taylor</p>
+            </div>
+            <span onclick="addBook4ToCart()" class="item-price">168.00 kr</span>
+           <button id="add-to-cart3" class="fa fa-shopping-cart" onclick="addBook4ToCart()"</button>
+             </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="cart-container">
+      <p id="cart-title">Din <strong>Order</strong></p>
+      <div id="empty-cart">
+        <h1>Din kundvagn är tom</h1>
+    </div>
+      <div id="cart-with-items">
+        <div class="cart-column">
+          <h3>Bok</h3>
+          <h3>Författare</h3>
+          <h3>Pris per bok</h3>
+          <h3>Antal</h3>
+          <h3>Totalt</h3>
+          <h3>Ta bort</h3>
+        </div>
+      </div>
+        <div class="cart-column">
+          <h3 id="fotboll"></h3>
+          <h3 id="name"></h3>
+          <h3 id="kr-per-bok"></h3>
+          <h3>
+            <button class="Minus" onclick="removeOneBook1FromCart()">-</button>
+            <span id="antal"></span>
+            <button class="Plus" onclick="addBook1ToCart()">+</button>
+          </h3>
+          <h3 id="kr-0"></h3>
+          <button class="btn-all">Ta bort</button>
+        </div>
+      
+      <div class="cart-column">
+        <h3 id="fotboll-1"></h3>
+        <h3 id="name-1"></h3>
+        <h3 id="kr-per-bok-1"></h3>
+        <h3>
+          <button class="Minus" onclick="removeOneBook2FromCart()">-</button>
+          <span id="antal-1"></span>
+          <button class="Plus" onclick="addBook2ToCart()">+</button>
+        </h3> 
+        <h3 id="kr-1"></h3>
+        <button class="btn-all">Ta bort</button>
+      </div>
+    
+    <div class="cart-column">
+      <h3 id="fotboll-2"></h3>
+      <h3 id="name-2"></h3>
+      <h3 id="kr-per-bok-2"></h3>
+      <h3>
+        <button class="Minus" onclick="removeOneBook3FromCart()">-</button>
+        <span id="antal-2"></span>
+        <button class="Plus" onclick="addBook3ToCart()">+</button>
+      </h3>
+      <h3 id="kr-2"></h3>
+      <button class="btn-all">Ta bort</button>
+    </div>
+  
+  <div class="cart-column">
+    <h3 id="fotboll-3"></h3>
+    <h3 id="name-3"></h3>
+    <h3 id="kr-per-bok-3"></h3>
+    <h3>
+      <button class="Minus" onclick="removeOneBook4FromCart()">-</button>
+      <span id="antal-3"></span>
+      <button class="Plus" onclick="addBook4ToCart()">+</button>
+    </h3>
+    <h3 id="kr-3"></h3>
+    <button class="btn-all">Ta bort</button>
+  </div>
+  
+        <div id="total">
+          <h3 id="total-antal">Total</h3>
+          <h2 id="total-order"></h2>
+          <h3 id="fri-frakt"></h3>
+        </div>
+      
+      </div>
+    </div>
+    <script src="./Bokus.js"></script>
+  </body>
+</html>
